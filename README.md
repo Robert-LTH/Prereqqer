@@ -2,6 +2,8 @@
 
 Prereqqer is a cross-platform .NET desktop application for running prerequisite checks grouped by area. It supports WMI queries on Windows and trusted PowerShell scripts on Windows, macOS, and Linux.
 
+![Prereqqer application screenshot](docs/screenshot.png)
+
 ## Run
 
 ```bash

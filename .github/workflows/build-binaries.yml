@@ -1,0 +1,123 @@
+name: Build binaries
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_VERSION: 10.0.x
+  CONFIGURATION: Release
+  SELF_CONTAINED: "false"
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Test
+        run: dotnet test Prereqqer.slnx --configuration ${{ env.CONFIGURATION }}
+
+  publish:
+    name: Publish ${{ matrix.runtime }}
+    needs: test
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            runtime: osx-x64
+            artifact: Prereqqer-osx-x64
+            package: macos
+          - os: macos-latest
+            runtime: osx-arm64
+            artifact: Prereqqer-osx-arm64
+            package: macos
+          - os: windows-latest
+            runtime: win-x64
+            artifact: Prereqqer-win-x64
+            package: windows
+          - os: windows-latest
+            runtime: win-arm64
+            artifact: Prereqqer-win-arm64
+            package: windows
+          - os: ubuntu-latest
+            runtime: linux-x64
+            artifact: Prereqqer-linux-x64
+            package: linux
+          - os: ubuntu-latest
+            runtime: linux-arm64
+            artifact: Prereqqer-linux-arm64
+            package: linux
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Publish macOS app bundle
+        if: matrix.package == 'macos'
+        shell: bash
+        run: ./scripts/package-macos.sh ${{ matrix.runtime }}
+
+      - name: Publish Windows and Linux binaries
+        if: matrix.package != 'macos'
+        run: >
+          dotnet publish src/Prereqqer.App/Prereqqer.App.csproj
+          --configuration ${{ env.CONFIGURATION }}
+          --runtime ${{ matrix.runtime }}
+          --self-contained ${{ env.SELF_CONTAINED }}
+          --output artifacts/publish/${{ matrix.runtime }}
+
+      - name: Archive macOS app bundle
+        if: matrix.package == 'macos'
+        shell: bash
+        run: |
+          mkdir -p artifacts/upload
+          ditto -c -k --sequesterRsrc --keepParent \
+            artifacts/package/${{ matrix.runtime }}/Prereqqer.app \
+            artifacts/upload/${{ matrix.artifact }}.zip
+
+      - name: Archive Windows binaries
+        if: matrix.package == 'windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path artifacts/upload | Out-Null
+          Compress-Archive `
+            -Path artifacts/publish/${{ matrix.runtime }}/* `
+            -DestinationPath artifacts/upload/${{ matrix.artifact }}.zip `
+            -Force
+
+      - name: Archive Linux binaries
+        if: matrix.package == 'linux'
+        shell: bash
+        run: |
+          mkdir -p artifacts/upload
+          tar -czf artifacts/upload/${{ matrix.artifact }}.tar.gz \
+            -C artifacts/publish/${{ matrix.runtime }} .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: artifacts/upload/*
+          if-no-files-found: error
