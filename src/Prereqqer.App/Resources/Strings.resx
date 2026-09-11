@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Add" xml:space="preserve"><value>Add</value></data>
+  <data name="AddCondition" xml:space="preserve"><value>Add condition</value></data>
+  <data name="AddPowerShell" xml:space="preserve"><value>Add PowerShell</value></data>
+  <data name="AddWmi" xml:space="preserve"><value>Add WMI</value></data>
+  <data name="Admin" xml:space="preserve"><value>Admin</value></data>
+  <data name="ApplicationName" xml:space="preserve"><value>Application name</value></data>
+  <data name="AccentColor" xml:space="preserve"><value>Accent color</value></data>
+  <data name="Branding" xml:space="preserve"><value>Branding</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Checks" xml:space="preserve"><value>Checks</value></data>
+  <data name="ConfigurationSource" xml:space="preserve"><value>Configuration Source</value></data>
+  <data name="ConfigurationUrl" xml:space="preserve"><value>Configuration URL</value></data>
+  <data name="ConditionDetails" xml:space="preserve"><value>Condition Details</value></data>
+  <data name="Conditions" xml:space="preserve"><value>Conditions</value></data>
+  <data name="CopyFactoryChecks" xml:space="preserve"><value>Copy built-in checks</value></data>
+  <data name="Delete" xml:space="preserve"><value>Delete</value></data>
+  <data name="Description" xml:space="preserve"><value>Description</value></data>
+  <data name="Down" xml:space="preserve"><value>Down</value></data>
+  <data name="Duration" xml:space="preserve"><value>Duration</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Enabled</value></data>
+  <data name="Errors" xml:space="preserve"><value>Errors</value></data>
+  <data name="ExpectedValue" xml:space="preserve"><value>Expected value</value></data>
+  <data name="Export" xml:space="preserve"><value>Export</value></data>
+  <data name="FetchConfigurationOnStartup" xml:space="preserve"><value>Fetch configuration from this URL at startup</value></data>
+  <data name="FetchUrl" xml:space="preserve"><value>Fetch URL</value></data>
+  <data name="Field" xml:space="preserve"><value>Field</value></data>
+  <data name="GroupDetails" xml:space="preserve"><value>Group Details</value></data>
+  <data name="Groups" xml:space="preserve"><value>Groups</value></data>
+  <data name="HeaderBackground" xml:space="preserve"><value>Header background</value></data>
+  <data name="HeaderForeground" xml:space="preserve"><value>Header foreground</value></data>
+  <data name="Import" xml:space="preserve"><value>Import</value></data>
+  <data name="LastTestOutput" xml:space="preserve"><value>Last Test Output</value></data>
+  <data name="MatchedRule" xml:space="preserve"><value>Matched rule</value></data>
+  <data name="Message" xml:space="preserve"><value>Message</value></data>
+  <data name="Name" xml:space="preserve"><value>Name</value></data>
+  <data name="Operator" xml:space="preserve"><value>Operator</value></data>
+  <data name="Outcome" xml:space="preserve"><value>Outcome</value></data>
+  <data name="OutcomeRules" xml:space="preserve"><value>Outcome Rules</value></data>
+  <data name="PlaceholderValue" xml:space="preserve"><value>Value</value></data>
+  <data name="PowerShellScript" xml:space="preserve"><value>PowerShell Script</value></data>
+  <data name="RecommendedAction" xml:space="preserve"><value>Recommended action</value></data>
+  <data name="Reload" xml:space="preserve"><value>Reload</value></data>
+  <data name="RequiresElevatedPrivileges" xml:space="preserve"><value>Requires elevated privileges</value></data>
+  <data name="Run" xml:space="preserve"><value>Run</value></data>
+  <data name="RunAll" xml:space="preserve"><value>Run all</value></data>
+  <data name="RunGroup" xml:space="preserve"><value>Run group</value></data>
+  <data name="RuntimeTab" xml:space="preserve"><value>Runtime</value></data>
+  <data name="RunInParallel" xml:space="preserve"><value>Run in parallel with adjacent parallel checks</value></data>
+  <data name="Save" xml:space="preserve"><value>Save</value></data>
+  <data name="SaveResult" xml:space="preserve"><value>Save result</value></data>
+  <data name="Settings" xml:space="preserve"><value>Settings</value></data>
+  <data name="Status" xml:space="preserve"><value>Status</value></data>
+  <data name="StructuredOutput" xml:space="preserve"><value>Structured Output</value></data>
+  <data name="Subtitle" xml:space="preserve"><value>Subtitle</value></data>
+  <data name="Target" xml:space="preserve"><value>Target</value></data>
+  <data name="Test" xml:space="preserve"><value>Test</value></data>
+  <data name="TimeoutSeconds" xml:space="preserve"><value>Timeout seconds</value></data>
+  <data name="Type" xml:space="preserve"><value>Type</value></data>
+  <data name="UnsavedChanges" xml:space="preserve"><value>Unsaved changes</value></data>
+  <data name="Up" xml:space="preserve"><value>Up</value></data>
+  <data name="Validate" xml:space="preserve"><value>Validate</value></data>
+  <data name="Version" xml:space="preserve"><value>Version</value></data>
+  <data name="Warnings" xml:space="preserve"><value>Warnings</value></data>
+  <data name="WmiNamespace" xml:space="preserve"><value>WMI Namespace</value></data>
+  <data name="WqlQuery" xml:space="preserve"><value>WQL Query</value></data>
+  <data name="AddedGroup" xml:space="preserve"><value>Added group.</value></data>
+  <data name="AddedCondition" xml:space="preserve"><value>Added condition.</value></data>
+  <data name="AddedPowerShellCondition" xml:space="preserve"><value>Added PowerShell condition.</value></data>
+  <data name="AddedRule" xml:space="preserve"><value>Added rule.</value></data>
+  <data name="AddedWmiCondition" xml:space="preserve"><value>Added WMI condition.</value></data>
+  <data name="AllExecutedConditionsPassed" xml:space="preserve"><value>All executed conditions passed.</value></data>
+  <data name="CancelRunTooltip" xml:space="preserve"><value>Cancel the run</value></data>
+  <data name="CancelledConditionFormat" xml:space="preserve"><value>Cancelled {0}.</value></data>
+  <data name="CancelledMessage" xml:space="preserve"><value>Cancelled.</value></data>
+  <data name="CompletedAllGroupsFormat" xml:space="preserve"><value>Completed all groups in {0}.</value></data>
+  <data name="CompletedConditionFormat" xml:space="preserve"><value>Completed {0} with {1}.</value></data>
+  <data name="CompletedGroupFormat" xml:space="preserve"><value>Completed {0} in {1}.</value></data>
+  <data name="CompletedInFormat" xml:space="preserve"><value>Completed in {0}.</value></data>
+  <data name="ConditionAlreadyRunning" xml:space="preserve"><value>Condition is already running.</value></data>
+  <data name="ConditionNameFormat" xml:space="preserve"><value>Condition {0}</value></data>
+  <data name="ConditionHasValidationErrors" xml:space="preserve"><value>Condition has validation errors.</value></data>
+  <data name="ConditionIsValid" xml:space="preserve"><value>Condition is valid.</value></data>
+  <data name="ConditionTestSkippedValidationFailed" xml:space="preserve"><value>Condition test skipped because validation failed.</value></data>
+  <data name="ConditionCancelledFormat" xml:space="preserve"><value>{0} condition(s) were cancelled.</value></data>
+  <data name="ConditionReturnedErrorFormat" xml:space="preserve"><value>{0} condition(s) returned Error.</value></data>
+  <data name="ConditionReturnedWarningsFormat" xml:space="preserve"><value>{0} condition(s) returned warnings. Overall readiness is still passing.</value></data>
+  <data name="CopiedFactoryChecksFormat" xml:space="preserve"><value>Copied {0} built-in condition(s) into {1} group(s). Save definitions to persist the changes.</value></data>
+  <data name="DeletedCondition" xml:space="preserve"><value>Deleted condition.</value></data>
+  <data name="DeletedGroup" xml:space="preserve"><value>Deleted group.</value></data>
+  <data name="DeletedRule" xml:space="preserve"><value>Deleted rule.</value></data>
+  <data name="DefinitionsHaveNotBeenRun" xml:space="preserve"><value>Definitions have not been run.</value></data>
+  <data name="DesignModeEnabled" xml:space="preserve"><value>Design mode enabled.</value></data>
+  <data name="DesignWindowTitleFormat" xml:space="preserve"><value>{0} - Design</value></data>
+  <data name="ElevationRequiredMessage" xml:space="preserve"><value>Requires elevation; restart with elevated privileges.</value></data>
+  <data name="ElevationRequiredRecommendedAction" xml:space="preserve"><value>Restart the application with elevated privileges.</value></data>
+  <data name="EnterConfigurationUrlBeforeFetching" xml:space="preserve"><value>Enter a configuration URL before fetching.</value></data>
+  <data name="ErrorsHeader" xml:space="preserve"><value>Errors:</value></data>
+  <data name="ExportDefinitionsTitle" xml:space="preserve"><value>Export Prereqqer definitions</value></data>
+  <data name="ExportedDefinitionsFormat" xml:space="preserve"><value>Exported definitions to {0}.</value></data>
+  <data name="FetchedDefinitionsFormat" xml:space="preserve"><value>Fetched definitions from {0} and cached them at {1}.</value></data>
+  <data name="GroupDisabledConditionNotRun" xml:space="preserve"><value>Group is disabled; condition was not run.</value></data>
+  <data name="GroupDisabledNoConditionsRun" xml:space="preserve"><value>Group is disabled; no conditions were run.</value></data>
+  <data name="GroupNameFormat" xml:space="preserve"><value>Group {0}</value></data>
+  <data name="ImportDefinitionsTitle" xml:space="preserve"><value>Import Prereqqer definitions</value></data>
+  <data name="ImportedDefinitionsFormat" xml:space="preserve"><value>Imported definitions from {0}.</value></data>
+  <data name="JsonFiles" xml:space="preserve"><value>JSON files</value></data>
+  <data name="LoadedDefinitionsFormat" xml:space="preserve"><value>Loaded definitions from {0}.</value></data>
+  <data name="LoadedDefinitionsFromUrlFormat" xml:space="preserve"><value>Loaded definitions from {0} and cached them at {1}.</value></data>
+  <data name="LoadedLocalDefinitionsConfigurationUrlFailedFormat" xml:space="preserve"><value>Loaded local definitions from {0}; configuration URL failed: {1}</value></data>
+  <data name="LoadingDefinitions" xml:space="preserve"><value>Loading definitions...</value></data>
+  <data name="NoChecksFailed" xml:space="preserve"><value>No checks have failed.</value></data>
+  <data name="NoFactoryChecksCopied" xml:space="preserve"><value>All built-in checks are already present.</value></data>
+  <data name="NotRun" xml:space="preserve"><value>Not run</value></data>
+  <data name="NotRunMessage" xml:space="preserve"><value>Not run.</value></data>
+  <data name="NotFoundViewFormat" xml:space="preserve"><value>Not Found: {0}</value></data>
+  <data name="OutcomeCancelled" xml:space="preserve"><value>Cancelled</value></data>
+  <data name="OutcomeError" xml:space="preserve"><value>Error</value></data>
+  <data name="OutcomePassed" xml:space="preserve"><value>Passed</value></data>
+  <data name="OutcomePassedWithWarning" xml:space="preserve"><value>Passed with warning</value></data>
+  <data name="OutcomeWarning" xml:space="preserve"><value>Warning</value></data>
+  <data name="PowerShellConditionNameFormat" xml:space="preserve"><value>PowerShell condition {0}</value></data>
+  <data name="RunCancelled" xml:space="preserve"><value>Run cancelled.</value></data>
+  <data name="RunOneOrMoreConditionsBeforeSavingResults" xml:space="preserve"><value>Run one or more conditions before saving results.</value></data>
+  <data name="Running" xml:space="preserve"><value>Running...</value></data>
+  <data name="RunningAllGroups" xml:space="preserve"><value>Running all groups...</value></data>
+  <data name="RunningItemFormat" xml:space="preserve"><value>Running {0}...</value></data>
+  <data name="RuleNameFormat" xml:space="preserve"><value>Rule {0}</value></data>
+  <data name="SavedDefinitionsFormat" xml:space="preserve"><value>Saved definitions to {0}.</value></data>
+  <data name="SavedResultsFormat" xml:space="preserve"><value>Saved results to {0}.</value></data>
+  <data name="SaveResultsTitle" xml:space="preserve"><value>Save Prereqqer results</value></data>
+  <data name="TestCompletedFormat" xml:space="preserve"><value>Test completed with {0}.</value></data>
+  <data name="UpdatedFromIndividualConditionRun" xml:space="preserve"><value>Updated from individual condition run.</value></data>
+  <data name="ValidationPassed" xml:space="preserve"><value>Validation passed.</value></data>
+  <data name="WarningsHeader" xml:space="preserve"><value>Warnings:</value></data>
+  <data name="WaitForRunningGroupBeforeAnotherCheck" xml:space="preserve"><value>Wait for the running group to finish before starting another check in it.</value></data>
+  <data name="WaitForRunningGroupBeforeAnotherGroup" xml:space="preserve"><value>Wait for the running group to finish before starting checks in another group.</value></data>
+  <data name="WmiConditionNameFormat" xml:space="preserve"><value>WMI condition {0}</value></data>
+</root>

@@ -1,0 +1,771 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:resources="using:Prereqqer.App.Resources"
+        xmlns:vm="using:Prereqqer.App.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1240" d:DesignHeight="820"
+        x:Class="Prereqqer.App.Views.MainWindow"
+        x:DataType="vm:MainViewModel"
+        Icon="/Assets/prereqqer-icon.png"
+        Title="{Binding WindowTitle}"
+        Width="1240"
+        Height="820"
+        MinWidth="1000"
+        MinHeight="680">
+
+    <Window.Styles>
+        <Style Selector="TabControl">
+            <Setter Property="Background" Value="#F5F7FA" />
+            <Setter Property="Foreground" Value="#172033" />
+        </Style>
+        <Style Selector="TabItem">
+            <Setter Property="Foreground" Value="#334155" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="Foreground" Value="#172033" />
+            <Setter Property="BorderBrush" Value="#B9C6D8" />
+            <Setter Property="CaretBrush" Value="#0B1220" />
+            <Setter Property="SelectionBrush" Value="#BFDBFE" />
+        </Style>
+        <Style Selector="TextBox:disabled">
+            <Setter Property="Background" Value="#F1F5F9" />
+            <Setter Property="Foreground" Value="#475569" />
+        </Style>
+        <Style Selector="TextBox:read-only">
+            <Setter Property="Background" Value="#F8FAFC" />
+            <Setter Property="Foreground" Value="#172033" />
+        </Style>
+        <Style Selector="ComboBox">
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="Foreground" Value="#172033" />
+            <Setter Property="BorderBrush" Value="#B9C6D8" />
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Background" Value="#F8FAFC" />
+            <Setter Property="Foreground" Value="#172033" />
+            <Setter Property="BorderBrush" Value="#B9C6D8" />
+        </Style>
+        <Style Selector="CheckBox">
+            <Setter Property="Foreground" Value="#172033" />
+        </Style>
+        <Style Selector="ListBox">
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="Foreground" Value="#172033" />
+            <Setter Property="BorderBrush" Value="#D5DDE8" />
+        </Style>
+        <Style Selector="ListBoxItem">
+            <Setter Property="Foreground" Value="#172033" />
+            <Setter Property="Background" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="ListBoxItem:selected">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="Background" Value="#075EAD" />
+        </Style>
+        <Style Selector="ListBoxItem:selected TextBlock.muted">
+            <Setter Property="Foreground" Value="#DCEBFF" />
+        </Style>
+        <Style Selector="TextBlock.heading">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#172033" />
+        </Style>
+        <Style Selector="TextBlock.sectionHeading">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#172033" />
+        </Style>
+        <Style Selector="TextBlock.label">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Foreground" Value="#475569" />
+        </Style>
+        <Style Selector="TextBlock.muted">
+            <Setter Property="Foreground" Value="#64748B" />
+        </Style>
+        <Style Selector="Border.panel">
+            <Setter Property="BorderBrush" Value="#D5DDE8" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Padding" Value="12" />
+            <Setter Property="Background" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Border.status">
+            <Setter Property="BorderBrush" Value="#CBD5E1" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="Padding" Value="8,3" />
+            <Setter Property="Background" Value="#F8FAFC" />
+        </Style>
+        <Style Selector="Path.spinnerGlyph">
+            <Setter Property="Width" Value="18" />
+            <Setter Property="Height" Value="18" />
+            <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="Stroke" Value="#1D4ED8" />
+            <Setter Property="StrokeThickness" Value="2.4" />
+            <Setter Property="StrokeLineCap" Value="Round" />
+            <Setter Property="RenderTransformOrigin" Value="50%,50%" />
+            <Setter Property="RenderTransform">
+                <RotateTransform Angle="0" />
+            </Setter>
+            <Style.Animations>
+                <Animation Duration="0:0:0.8" IterationCount="Infinite">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="RotateTransform.Angle" Value="0" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="RotateTransform.Angle" Value="360" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+        <Style Selector="Button.toolbar">
+            <Setter Property="MinWidth" Value="84" />
+            <Setter Property="MinHeight" Value="30" />
+        </Style>
+        <Style Selector="Button.iconAction">
+            <Setter Property="MinWidth" Value="28" />
+            <Setter Property="Width" Value="28" />
+            <Setter Property="MinHeight" Value="28" />
+            <Setter Property="Height" Value="28" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Path.statusIcon">
+            <Setter Property="Width" Value="20" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Stretch" Value="Uniform" />
+            <Setter Property="StrokeThickness" Value="2.1" />
+            <Setter Property="StrokeLineCap" Value="Round" />
+        </Style>
+        <Style Selector="TextBox.mono">
+            <Setter Property="FontFamily" Value="Consolas, Menlo, monospace" />
+            <Setter Property="FontSize" Value="13" />
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,*,Auto" Background="#F5F7FA">
+        <Border Grid.Row="0" Background="{Binding HeaderBackgroundBrush}" Padding="18,14">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                <StackPanel>
+                    <TextBlock Text="{Binding BrandName}" FontSize="24" FontWeight="SemiBold" Foreground="{Binding HeaderForegroundBrush}" />
+                    <TextBlock Text="{Binding BrandSubtitle}" Foreground="{Binding HeaderForegroundBrush}" Opacity="0.78" FontSize="12" />
+                    <Border Height="3" Width="120" HorizontalAlignment="Left" Background="{Binding AccentBrush}" Margin="0,8,0,0" />
+                </StackPanel>
+                <Border Grid.Column="1"
+                        Classes="status"
+                        VerticalAlignment="Center"
+                        Background="{Binding OverallOutcomeBackgroundBrush}"
+                        BorderBrush="{Binding OverallOutcomeBorderBrush}"
+                        IsVisible="{Binding !IsBusy}">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <TextBlock Text="{Binding OverallOutcomeDisplay}" FontWeight="SemiBold" Foreground="{Binding OverallOutcomeForegroundBrush}" />
+                        <TextBlock Text="{Binding OverallMessage}" Classes="muted" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+
+        <TabControl Grid.Row="1" Margin="14">
+            <TabItem Header="{x:Static resources:Strings.RuntimeTab}">
+                <Grid RowDefinitions="Auto,*" RowSpacing="12">
+                    <Border Classes="panel">
+                        <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="10">
+                            <Button Classes="toolbar" Content="{x:Static resources:Strings.Reload}" Command="{Binding LoadDefinitionsCommand}" IsVisible="{Binding !IsBusy}" />
+                            <Button Grid.Column="1"
+                                    Classes="toolbar"
+                                    Content="{x:Static resources:Strings.SaveResult}"
+                                    Click="SaveResultsClicked"
+                                    IsEnabled="{Binding HasRunResults}"
+                                    IsVisible="{Binding !IsBusy}" />
+                            <TextBlock Grid.Column="2" Text="{Binding OverallMessage}" VerticalAlignment="Center" Classes="muted" IsVisible="{Binding !IsBusy}" />
+                            <Button Grid.Column="3" Classes="toolbar" Content="{x:Static resources:Strings.RunAll}" Command="{Binding RunAllCommand}" IsVisible="{Binding !IsBusy}" />
+                            <Button Grid.Column="3"
+                                    Classes="toolbar"
+                                    Content="{x:Static resources:Strings.Cancel}"
+                                    Command="{Binding CancelRunCommand}"
+                                    IsVisible="{Binding IsBusy}" />
+                        </Grid>
+                    </Border>
+
+                    <ScrollViewer Grid.Row="1">
+                        <ItemsControl ItemsSource="{Binding Groups}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="vm:GroupEditorViewModel">
+                                    <Border Classes="panel" Margin="0,0,0,12" Opacity="{Binding DisplayOpacity}">
+                                        <StackPanel Spacing="10">
+                                            <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="10">
+                                                <Button Content="{Binding ExpansionSymbol}"
+                                                        Width="32"
+                                                        Command="{Binding $parent[Window].DataContext.ToggleGroupExpansionCommand}"
+                                                        CommandParameter="{Binding}"
+                                                        VerticalAlignment="Top" />
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="{Binding Name}" Classes="heading" ToolTip.Tip="{Binding Description}" />
+                                                </StackPanel>
+                                                <Border Grid.Column="2"
+                                                        Classes="status"
+                                                        VerticalAlignment="Top"
+                                                        Background="{Binding OutcomeBackgroundBrush}"
+                                                        BorderBrush="{Binding OutcomeBorderBrush}"
+                                                        ToolTip.Tip="{Binding FailedConditionsTooltip}"
+                                                        IsVisible="{Binding !IsRunning}">
+                                                    <TextBlock Text="{Binding LastOutcomeDisplay}" FontWeight="SemiBold" Foreground="{Binding OutcomeForegroundBrush}" />
+                                                </Border>
+                                                <Border Grid.Column="2"
+                                                        Classes="status"
+                                                        VerticalAlignment="Top"
+                                                        IsVisible="{Binding IsRunning}">
+                                                    <Path Classes="spinnerGlyph"
+                                                          Data="M 10,2 A 8,8 0 1 1 4.34,4.34"
+                                                          HorizontalAlignment="Center"
+                                                          VerticalAlignment="Center" />
+                                                </Border>
+                                                <Button Grid.Column="3"
+                                                        Content="{x:Static resources:Strings.RunGroup}"
+                                                        Command="{Binding $parent[Window].DataContext.RunGroupCommand}"
+                                                        CommandParameter="{Binding}"
+                                                        VerticalAlignment="Top"
+                                                        IsVisible="{Binding !IsRunning}" />
+                                                <Button Grid.Column="3"
+                                                        Content="{x:Static resources:Strings.Cancel}"
+                                                        Command="{Binding $parent[Window].DataContext.CancelRunCommand}"
+                                                        VerticalAlignment="Top"
+                                                        IsVisible="{Binding IsRunning}" />
+                                            </Grid>
+
+                                            <ItemsControl ItemsSource="{Binding Conditions}" IsVisible="{Binding IsExpanded}">
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate DataType="vm:ConditionEditorViewModel">
+                                                        <Border BorderBrush="#E2E8F0" BorderThickness="1,0,0,0" Padding="10,8" Margin="0,2">
+                                                            <Grid ColumnDefinitions="Auto,Auto,2*,2*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="12" RowSpacing="10">
+                                                                <Button Content="{Binding ExpansionSymbol}"
+                                                                        Width="28"
+                                                                        Command="{Binding $parent[Window].DataContext.ToggleConditionExpansionCommand}"
+                                                                        CommandParameter="{Binding}"
+                                                                        VerticalAlignment="Top" />
+                                                                <Grid Grid.Column="1"
+                                                                      Width="20"
+                                                                      Height="20"
+                                                                      VerticalAlignment="Top"
+                                                                      Margin="0,4,0,0">
+                                                                    <Path Classes="statusIcon"
+                                                                          Data="{Binding StatusIconGeometry}"
+                                                                          Stroke="{Binding OutcomeForegroundBrush}"
+                                                                          IsVisible="{Binding !IsRunning}"
+                                                                          ToolTip.Tip="{Binding LastOutcomeDisplay}" />
+                                                                    <Path Classes="spinnerGlyph"
+                                                                          Data="M 10,2 A 8,8 0 1 1 4.34,4.34"
+                                                                          HorizontalAlignment="Center"
+                                                                          VerticalAlignment="Center"
+                                                                          IsVisible="{Binding IsRunning}" />
+                                                                </Grid>
+                                                                <StackPanel Grid.Column="2">
+                                                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" ToolTip.Tip="{Binding Description}" />
+                                                                    <TextBlock Text="{x:Static resources:Strings.RequiresElevatedPrivileges}" Classes="label" IsVisible="{Binding RequiresElevation}" Margin="0,6,0,0" />
+                                                                </StackPanel>
+                                                                <StackPanel Grid.Column="3" VerticalAlignment="Center" IsVisible="{Binding ShowRecommendedAction}">
+                                                                    <TextBlock Text="{x:Static resources:Strings.RecommendedAction}" Classes="label" />
+                                                                    <TextBlock Text="{Binding LastRecommendedAction}" TextWrapping="Wrap" />
+                                                                </StackPanel>
+                                                                <StackPanel Grid.Column="4" MinWidth="78" HorizontalAlignment="Right" VerticalAlignment="Center" Spacing="6">
+                                                                    <Button Content="{x:Static resources:Strings.Run}"
+                                                                            Command="{Binding $parent[Window].DataContext.RunConditionCommand}"
+                                                                            CommandParameter="{Binding}"
+                                                                            HorizontalAlignment="Right"
+                                                                            IsVisible="{Binding ShowRunButton}" />
+                                                                    <Button Content="{x:Static resources:Strings.Cancel}"
+                                                                            Command="{Binding $parent[Window].DataContext.CancelConditionRunCommand}"
+                                                                            CommandParameter="{Binding}"
+                                                                            HorizontalAlignment="Right"
+                                                                            IsVisible="{Binding IsRunning}" />
+                                                                </StackPanel>
+
+                                                                <Border Grid.Row="1"
+                                                                        Grid.ColumnSpan="5"
+                                                                        BorderBrush="#E2E8F0"
+                                                                        BorderThickness="0,1,0,0"
+                                                                        Padding="0,10,0,0"
+                                                                        IsVisible="{Binding IsExpanded}">
+                                                                    <Grid RowDefinitions="Auto,Auto,Auto"
+                                                                          ColumnDefinitions="*,*,Auto"
+                                                                          RowSpacing="8"
+                                                                          ColumnSpacing="12">
+                                                                        <StackPanel>
+                                                                            <TextBlock Text="{x:Static resources:Strings.Status}" Classes="label" />
+                                                                            <TextBlock Text="{Binding LastOutcomeDisplay}" FontWeight="SemiBold" Foreground="{Binding OutcomeForegroundBrush}" />
+                                                                        </StackPanel>
+                                                                        <StackPanel Grid.Column="1">
+                                                                            <TextBlock Text="{x:Static resources:Strings.MatchedRule}" Classes="label" />
+                                                                            <TextBlock Text="{Binding MatchedRule}" Classes="muted" TextWrapping="Wrap" />
+                                                                        </StackPanel>
+                                                                        <StackPanel Grid.Column="2">
+                                                                            <TextBlock Text="{x:Static resources:Strings.Duration}" Classes="label" />
+                                                                            <TextBlock Text="{Binding Duration}" Classes="muted" HorizontalAlignment="Right" />
+                                                                        </StackPanel>
+
+                                                                        <StackPanel Grid.Row="1" Grid.ColumnSpan="3">
+                                                                            <TextBlock Text="{x:Static resources:Strings.Message}" Classes="label" />
+                                                                            <TextBlock Text="{Binding LastMessage}" TextWrapping="Wrap" />
+                                                                        </StackPanel>
+
+                                                                        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" IsVisible="{Binding ShowRecommendedAction}">
+                                                                            <TextBlock Text="{x:Static resources:Strings.RecommendedAction}" Classes="label" />
+                                                                            <TextBlock Text="{Binding LastRecommendedAction}" TextWrapping="Wrap" />
+                                                                        </StackPanel>
+
+                                                                    </Grid>
+                                                                </Border>
+                                                            </Grid>
+                                                        </Border>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{x:Static resources:Strings.Admin}" IsVisible="{Binding IsDesignMode}">
+                <Grid RowDefinitions="Auto,*" RowSpacing="12">
+                    <Border Classes="panel">
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,*,Auto" ColumnSpacing="10">
+                            <Button Classes="toolbar" Content="{x:Static resources:Strings.Save}" Command="{Binding SaveDefinitionsCommand}" />
+                            <Button Grid.Column="1" Classes="toolbar" Content="{x:Static resources:Strings.Import}" Click="ImportDefinitionsClicked" />
+                            <Button Grid.Column="2" Classes="toolbar" Content="{x:Static resources:Strings.Export}" Click="ExportDefinitionsClicked" />
+                            <Button Grid.Column="3" Classes="toolbar" Content="{x:Static resources:Strings.CopyFactoryChecks}" Command="{Binding CopyFactoryChecksCommand}" />
+                            <StackPanel Grid.Column="4" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <Border Classes="status"
+                                        Background="#FEF3C7"
+                                        BorderBrush="#FCD34D"
+                                        IsVisible="{Binding HasUnsavedChanges}">
+                                    <TextBlock Text="{x:Static resources:Strings.UnsavedChanges}"
+                                               Foreground="#92400E"
+                                               FontWeight="SemiBold" />
+                                </Border>
+                                <TextBlock Text="{Binding DefinitionPath}" Classes="muted" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <ProgressBar Grid.Column="5" Width="130" Height="6" IsIndeterminate="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+                        </Grid>
+                    </Border>
+
+                    <TabControl Grid.Row="1">
+                        <TabItem Header="{x:Static resources:Strings.Checks}">
+                            <Grid ColumnDefinitions="300,*" ColumnSpacing="12">
+                        <Border Classes="panel">
+                            <Grid RowDefinitions="Auto,*" RowSpacing="10">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <TextBlock Text="{x:Static resources:Strings.Groups}" Classes="sectionHeading" VerticalAlignment="Center" />
+                                    <Button Grid.Column="1"
+                                            Classes="iconAction"
+                                            Content="+"
+                                            Command="{Binding AddGroupCommand}"
+                                            ToolTip.Tip="{x:Static resources:Strings.Add}" />
+                                </Grid>
+                                <ListBox Grid.Row="1" ItemsSource="{Binding Groups}" SelectedItem="{Binding SelectedGroup}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate DataType="vm:GroupEditorViewModel">
+                                            <Grid Margin="0,4" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="6" Opacity="{Binding DisplayOpacity}">
+                                                <StackPanel>
+                                                    <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                                    <TextBlock Text="{Binding Description}" Classes="muted" TextWrapping="Wrap" />
+                                                </StackPanel>
+                                                <Button Grid.Column="1"
+                                                        Classes="iconAction"
+                                                        Content="↑"
+                                                        Command="{Binding $parent[Window].DataContext.MoveGroupUpCommand}"
+                                                        CommandParameter="{Binding}"
+                                                        ToolTip.Tip="{x:Static resources:Strings.Up}" />
+                                                <Button Grid.Column="2"
+                                                        Classes="iconAction"
+                                                        Content="↓"
+                                                        Command="{Binding $parent[Window].DataContext.MoveGroupDownCommand}"
+                                                        CommandParameter="{Binding}"
+                                                        ToolTip.Tip="{x:Static resources:Strings.Down}" />
+                                                <Button Grid.Column="3"
+                                                        Classes="iconAction"
+                                                        Content="-"
+                                                        Command="{Binding $parent[Window].DataContext.DeleteGroupCommand}"
+                                                        CommandParameter="{Binding}"
+                                                        ToolTip.Tip="{x:Static resources:Strings.Delete}" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                        </Border>
+
+                        <Grid Grid.Column="1" RowDefinitions="Auto,*" RowSpacing="12">
+                                <Border Classes="panel" Grid.Row="0" IsVisible="{Binding HasSelectedGroup}">
+                                    <StackPanel Spacing="8">
+                                        <TextBlock Text="{x:Static resources:Strings.GroupDetails}" Classes="sectionHeading" />
+                                        <Grid ColumnDefinitions="2*,3*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="6">
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static resources:Strings.Name}" Classes="label" />
+                                                <TextBox Text="{Binding SelectedGroup.Name, UpdateSourceTrigger=PropertyChanged}" />
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Text="{x:Static resources:Strings.Description}" Classes="label" />
+                                                <TextBox Text="{Binding SelectedGroup.Description, UpdateSourceTrigger=PropertyChanged}" />
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="2" Content="{x:Static resources:Strings.Enabled}" IsChecked="{Binding SelectedGroup.Enabled}" VerticalAlignment="Bottom" />
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+
+                                <Grid Grid.Row="1" ColumnDefinitions="320,*" ColumnSpacing="12" IsVisible="{Binding HasSelectedGroup}">
+                                    <Border Classes="panel">
+                                        <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
+                                            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="6">
+                                                <TextBlock Text="{x:Static resources:Strings.Conditions}" Classes="sectionHeading" VerticalAlignment="Center" />
+                                                <Button Grid.Column="1"
+                                                        Classes="iconAction"
+                                                        Content="+"
+                                                        Command="{Binding AddConditionCommand}"
+                                                        ToolTip.Tip="{x:Static resources:Strings.AddCondition}" />
+                                            </Grid>
+                                            <ListBox Grid.Row="1"
+                                                     ItemsSource="{Binding SelectedGroup.Conditions}"
+                                                     SelectedItem="{Binding SelectedGroup.SelectedCondition}">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate DataType="vm:ConditionEditorViewModel">
+                                                        <Grid Margin="0,4" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="6">
+                                                            <Path Width="14"
+                                                                  Height="14"
+                                                                  Data="{Binding StatusIconGeometry}"
+                                                                  Fill="{Binding OutcomeForegroundBrush}"
+                                                                  Stretch="Uniform"
+                                                                  VerticalAlignment="Center"
+                                                                  ToolTip.Tip="{Binding CurrentOutcomeDisplay}" />
+                                                            <StackPanel Grid.Column="1">
+                                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                                                <TextBlock Text="{Binding Type}" Classes="muted" />
+                                                            </StackPanel>
+                                                            <Button Grid.Column="2"
+                                                                    Classes="iconAction"
+                                                                    Content="↑"
+                                                                    Command="{Binding $parent[Window].DataContext.MoveConditionUpCommand}"
+                                                                    CommandParameter="{Binding}"
+                                                                    ToolTip.Tip="{x:Static resources:Strings.Up}" />
+                                                            <Button Grid.Column="3"
+                                                                    Classes="iconAction"
+                                                                    Content="↓"
+                                                                    Command="{Binding $parent[Window].DataContext.MoveConditionDownCommand}"
+                                                                    CommandParameter="{Binding}"
+                                                                    ToolTip.Tip="{x:Static resources:Strings.Down}" />
+                                                            <Button Grid.Column="4"
+                                                                    Classes="iconAction"
+                                                                    Content="-"
+                                                                    Command="{Binding $parent[Window].DataContext.DeleteConditionCommand}"
+                                                                    CommandParameter="{Binding}"
+                                                                    ToolTip.Tip="{x:Static resources:Strings.Delete}" />
+                                                        </Grid>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                            <Grid Grid.Row="2" ColumnDefinitions="*,Auto">
+                                                <Button Grid.Column="1" Content="{x:Static resources:Strings.Test}" Command="{Binding TestSelectedConditionCommand}" />
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+
+                                    <ScrollViewer Grid.Column="1" IsVisible="{Binding HasSelectedCondition}">
+                                    <StackPanel Spacing="12">
+                                        <Border Classes="panel">
+                                            <StackPanel Spacing="8">
+                                                <Grid ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="10">
+                                                    <TextBlock Text="{x:Static resources:Strings.ConditionDetails}" Classes="sectionHeading" />
+                                                    <Button Grid.Column="1" Content="{x:Static resources:Strings.Validate}" Command="{Binding ValidateSelectedConditionCommand}" />
+                                                    <CheckBox Grid.Column="2"
+                                                              Content="{x:Static resources:Strings.RequiresElevatedPrivileges}"
+                                                              IsChecked="{Binding SelectedGroup.SelectedCondition.RequiresElevation}"
+                                                              VerticalAlignment="Center" />
+                                                    <CheckBox Grid.Column="3" Content="{x:Static resources:Strings.Enabled}" IsChecked="{Binding SelectedGroup.SelectedCondition.Enabled}" VerticalAlignment="Center" />
+                                                </Grid>
+
+                                                <Grid ColumnDefinitions="2*,*,Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+                                                    <StackPanel>
+                                                        <TextBlock Text="{x:Static resources:Strings.Name}" Classes="label" />
+                                                        <TextBox Text="{Binding SelectedGroup.SelectedCondition.Name, UpdateSourceTrigger=PropertyChanged}" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="{x:Static resources:Strings.Type}" Classes="label" />
+                                                        <ComboBox ItemsSource="{Binding SelectedGroup.SelectedCondition.TypeOptions}"
+                                                                  SelectedItem="{Binding SelectedGroup.SelectedCondition.Type}" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Static resources:Strings.TimeoutSeconds}" Classes="label" />
+                                                        <TextBox Width="120" Text="{Binding SelectedGroup.SelectedCondition.TimeoutSeconds, UpdateSourceTrigger=PropertyChanged}" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="3">
+                                                        <TextBlock Text="{x:Static resources:Strings.Version}" Classes="label" />
+                                                        <TextBlock Text="{Binding SelectedGroup.SelectedCondition.Version}" Classes="muted" VerticalAlignment="Center" MinHeight="30" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Row="1" Grid.ColumnSpan="4">
+                                                        <TextBlock Text="{x:Static resources:Strings.Description}" Classes="label" />
+                                                        <TextBox Text="{Binding SelectedGroup.SelectedCondition.Description, UpdateSourceTrigger=PropertyChanged}" />
+                                                    </StackPanel>
+                                                    <CheckBox Grid.Row="2"
+                                                              Grid.ColumnSpan="4"
+                                                              Content="{x:Static resources:Strings.RunInParallel}"
+                                                              IsChecked="{Binding SelectedGroup.SelectedCondition.RunInParallel}" />
+                                                    <StackPanel Grid.Row="3" Grid.ColumnSpan="4">
+                                                        <TextBlock Text="{x:Static resources:Strings.RecommendedAction}" Classes="label" />
+                                                        <TextBox Text="{Binding SelectedGroup.SelectedCondition.RecommendedAction, UpdateSourceTrigger=PropertyChanged}"
+                                                                 AcceptsReturn="True"
+                                                                 TextWrapping="Wrap"
+                                                                 MinHeight="72" />
+                                                    </StackPanel>
+                                                </Grid>
+
+                                                <StackPanel IsVisible="{Binding SelectedGroup.SelectedCondition.IsPowerShell}" Spacing="4">
+                                                    <TextBlock Text="{x:Static resources:Strings.PowerShellScript}" Classes="label" />
+                                                    <TextBox Classes="mono"
+                                                             Text="{Binding SelectedGroup.SelectedCondition.PowerShellScript, UpdateSourceTrigger=PropertyChanged}"
+                                                             AcceptsReturn="True"
+                                                             TextWrapping="Wrap"
+                                                             MinHeight="150" />
+                                                </StackPanel>
+
+                                                <StackPanel IsVisible="{Binding SelectedGroup.SelectedCondition.IsWmi}" Spacing="6">
+                                                    <StackPanel>
+                                                        <TextBlock Text="{x:Static resources:Strings.WmiNamespace}" Classes="label" />
+                                                        <TextBox Text="{Binding SelectedGroup.SelectedCondition.WmiNamespace, UpdateSourceTrigger=PropertyChanged}" />
+                                                    </StackPanel>
+                                                    <StackPanel>
+                                                        <TextBlock Text="{x:Static resources:Strings.WqlQuery}" Classes="label" />
+                                                        <TextBox Classes="mono"
+                                                                 Text="{Binding SelectedGroup.SelectedCondition.WmiQuery, UpdateSourceTrigger=PropertyChanged}"
+                                                                 AcceptsReturn="True"
+                                                                 TextWrapping="Wrap"
+                                                                 MinHeight="100" />
+                                                    </StackPanel>
+                                                </StackPanel>
+
+                                                <TextBox Classes="mono"
+                                                         Text="{Binding SelectedGroup.SelectedCondition.ValidationSummary}"
+                                                         AcceptsReturn="True"
+                                                         IsReadOnly="True"
+                                                         MinHeight="70" />
+                                            </StackPanel>
+                                        </Border>
+
+                                        <Border Classes="panel">
+                                            <Grid RowDefinitions="Auto,*" RowSpacing="8">
+                                                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                                    <TextBlock Text="{x:Static resources:Strings.OutcomeRules}" Classes="sectionHeading" VerticalAlignment="Center" />
+                                                    <Button Grid.Column="1"
+                                                            Classes="iconAction"
+                                                            Content="+"
+                                                            Command="{Binding AddRuleCommand}"
+                                                            ToolTip.Tip="{x:Static resources:Strings.Add}" />
+                                                </Grid>
+
+                                                <Grid Grid.Row="1" ColumnDefinitions="260,*" ColumnSpacing="10">
+                                                    <ListBox ItemsSource="{Binding SelectedGroup.SelectedCondition.Rules}"
+                                                             SelectedItem="{Binding SelectedGroup.SelectedCondition.SelectedRule}">
+                                                        <ListBox.ItemTemplate>
+                                                            <DataTemplate DataType="vm:RuleEditorViewModel">
+                                                                <Grid Margin="0,4" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="6">
+                                                                    <StackPanel>
+                                                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" />
+                                                                        <TextBlock Text="{Binding Outcome}" Classes="muted" />
+                                                                    </StackPanel>
+                                                                    <Button Grid.Column="1"
+                                                                            Classes="iconAction"
+                                                                            Content="↑"
+                                                                            Command="{Binding $parent[Window].DataContext.MoveRuleUpCommand}"
+                                                                            CommandParameter="{Binding}"
+                                                                            ToolTip.Tip="{x:Static resources:Strings.Up}" />
+                                                                    <Button Grid.Column="2"
+                                                                            Classes="iconAction"
+                                                                            Content="↓"
+                                                                            Command="{Binding $parent[Window].DataContext.MoveRuleDownCommand}"
+                                                                            CommandParameter="{Binding}"
+                                                                            ToolTip.Tip="{x:Static resources:Strings.Down}" />
+                                                                    <Button Grid.Column="3"
+                                                                            Classes="iconAction"
+                                                                            Content="-"
+                                                                            Command="{Binding $parent[Window].DataContext.DeleteRuleCommand}"
+                                                                            CommandParameter="{Binding}"
+                                                                            ToolTip.Tip="{x:Static resources:Strings.Delete}" />
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </ListBox.ItemTemplate>
+                                                    </ListBox>
+
+                                                    <Grid Grid.Column="1"
+                                                          RowDefinitions="Auto,Auto,Auto,Auto"
+                                                          ColumnDefinitions="*,*"
+                                                          RowSpacing="8"
+                                                          ColumnSpacing="10"
+                                                          IsVisible="{Binding SelectedGroup.SelectedCondition.HasSelectedRule}">
+                                                        <StackPanel>
+                                                            <TextBlock Text="{x:Static resources:Strings.Name}" Classes="label" />
+                                                            <TextBox Text="{Binding SelectedGroup.SelectedCondition.SelectedRule.Name, UpdateSourceTrigger=PropertyChanged}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Column="1">
+                                                            <TextBlock Text="{x:Static resources:Strings.Outcome}" Classes="label" />
+                                                            <ComboBox ItemsSource="{Binding SelectedGroup.SelectedCondition.SelectedRule.OutcomeOptions}"
+                                                                      SelectedItem="{Binding SelectedGroup.SelectedCondition.SelectedRule.Outcome}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Row="1">
+                                                            <TextBlock Text="{x:Static resources:Strings.Target}" Classes="label" />
+                                                            <ComboBox ItemsSource="{Binding SelectedGroup.SelectedCondition.SelectedRule.TargetOptions}"
+                                                                      SelectedItem="{Binding SelectedGroup.SelectedCondition.SelectedRule.Target}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Row="1" Grid.Column="1">
+                                                            <TextBlock Text="{x:Static resources:Strings.Operator}" Classes="label" />
+                                                            <ComboBox ItemsSource="{Binding SelectedGroup.SelectedCondition.SelectedRule.OperatorOptions}"
+                                                                      SelectedItem="{Binding SelectedGroup.SelectedCondition.SelectedRule.Operator}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Row="2">
+                                                            <TextBlock Text="{x:Static resources:Strings.Field}" Classes="label" />
+                                                            <TextBox Text="{Binding SelectedGroup.SelectedCondition.SelectedRule.Field, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="{x:Static resources:Strings.PlaceholderValue}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Row="2" Grid.Column="1">
+                                                            <TextBlock Text="{x:Static resources:Strings.ExpectedValue}" Classes="label" />
+                                                            <TextBox Text="{Binding SelectedGroup.SelectedCondition.SelectedRule.ExpectedValue, UpdateSourceTrigger=PropertyChanged}" />
+                                                        </StackPanel>
+                                                        <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
+                                                            <TextBlock Text="{x:Static resources:Strings.RecommendedAction}" Classes="label" />
+                                                            <TextBox Text="{Binding SelectedGroup.SelectedCondition.SelectedRule.RecommendedAction, UpdateSourceTrigger=PropertyChanged}"
+                                                                     AcceptsReturn="True"
+                                                                     TextWrapping="Wrap"
+                                                                     MinHeight="72" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+
+                                        <Border Classes="panel">
+                                            <StackPanel Spacing="8">
+                                                <TextBlock Text="{x:Static resources:Strings.LastTestOutput}" Classes="sectionHeading" />
+                                                <Grid ColumnDefinitions="*,*,*" ColumnSpacing="10">
+                                                    <StackPanel>
+                                                        <TextBlock Text="{x:Static resources:Strings.Outcome}" Classes="label" />
+                                                        <TextBlock Text="{Binding SelectedGroup.SelectedCondition.LastOutcomeDisplay}" FontWeight="SemiBold" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="1">
+                                                        <TextBlock Text="{x:Static resources:Strings.MatchedRule}" Classes="label" />
+                                                        <TextBlock Text="{Binding SelectedGroup.SelectedCondition.MatchedRule}" Classes="muted" />
+                                                    </StackPanel>
+                                                    <StackPanel Grid.Column="2">
+                                                        <TextBlock Text="{x:Static resources:Strings.Duration}" Classes="label" />
+                                                        <TextBlock Text="{Binding SelectedGroup.SelectedCondition.Duration}" Classes="muted" />
+                                                    </StackPanel>
+                                                </Grid>
+                                                <TextBlock Text="{Binding SelectedGroup.SelectedCondition.LastMessage}" TextWrapping="Wrap" />
+                                                <TextBlock Text="{x:Static resources:Strings.RecommendedAction}" Classes="label" IsVisible="{Binding SelectedGroup.SelectedCondition.ShowRecommendedAction}" />
+                                                <TextBox Text="{Binding SelectedGroup.SelectedCondition.LastRecommendedAction}"
+                                                         AcceptsReturn="True"
+                                                         IsReadOnly="True"
+                                                         TextWrapping="Wrap"
+                                                         MinHeight="55"
+                                                         IsVisible="{Binding SelectedGroup.SelectedCondition.ShowRecommendedAction}" />
+                                                <TextBlock Text="{x:Static resources:Strings.Warnings}" Classes="label" />
+                                                <TextBox Classes="mono"
+                                                         Text="{Binding SelectedGroup.SelectedCondition.WarningSummary}"
+                                                         AcceptsReturn="True"
+                                                         IsReadOnly="True"
+                                                         MinHeight="55" />
+                                                <TextBlock Text="{x:Static resources:Strings.Errors}" Classes="label" />
+                                                <TextBox Classes="mono"
+                                                         Text="{Binding SelectedGroup.SelectedCondition.ErrorSummary}"
+                                                         AcceptsReturn="True"
+                                                         IsReadOnly="True"
+                                                         MinHeight="55" />
+                                                <TextBlock Text="{x:Static resources:Strings.StructuredOutput}" Classes="label" />
+                                                <TextBox Classes="mono"
+                                                         Text="{Binding SelectedGroup.SelectedCondition.RawOutput}"
+                                                         AcceptsReturn="True"
+                                                         IsReadOnly="True"
+                                                         TextWrapping="Wrap"
+                                                         MinHeight="150" />
+                                            </StackPanel>
+                                        </Border>
+                                    </StackPanel>
+                                    </ScrollViewer>
+                                </Grid>
+                        </Grid>
+                            </Grid>
+                        </TabItem>
+
+                        <TabItem Header="{x:Static resources:Strings.Settings}">
+                            <ScrollViewer>
+                                <StackPanel Spacing="12">
+                                    <Border Classes="panel">
+                                        <StackPanel Spacing="8">
+                                            <TextBlock Text="{x:Static resources:Strings.Branding}" Classes="sectionHeading" />
+                                            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+                                                <StackPanel>
+                                                    <TextBlock Text="{x:Static resources:Strings.ApplicationName}" Classes="label" />
+                                                    <TextBox Text="{Binding BrandName, UpdateSourceTrigger=PropertyChanged}" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="{x:Static resources:Strings.Subtitle}" Classes="label" />
+                                                    <TextBox Text="{Binding BrandSubtitle, UpdateSourceTrigger=PropertyChanged}" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Row="1">
+                                                    <TextBlock Text="{x:Static resources:Strings.HeaderBackground}" Classes="label" />
+                                                    <TextBox Text="{Binding HeaderBackgroundColor, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="#172033" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Row="1" Grid.Column="1">
+                                                    <TextBlock Text="{x:Static resources:Strings.HeaderForeground}" Classes="label" />
+                                                    <TextBox Text="{Binding HeaderForegroundColor, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="#FFFFFF" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Row="2">
+                                                    <TextBlock Text="{x:Static resources:Strings.AccentColor}" Classes="label" />
+                                                    <TextBox Text="{Binding AccentColor, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="#075EAD" />
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <Border Classes="panel">
+                                        <StackPanel Spacing="8">
+                                            <TextBlock Text="{x:Static resources:Strings.ConfigurationSource}" Classes="sectionHeading" />
+                                            <Grid ColumnDefinitions="*,Auto,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="10" RowSpacing="8">
+                                                <StackPanel>
+                                                    <TextBlock Text="{x:Static resources:Strings.ConfigurationUrl}" Classes="label" />
+                                                    <TextBox Text="{Binding ConfigurationUrl, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="https://example.com/prereqqer-conditions.json" />
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1">
+                                                    <TextBlock Text="{x:Static resources:Strings.TimeoutSeconds}" Classes="label" />
+                                                    <TextBox Width="120" Text="{Binding ConfigurationTimeoutSeconds, UpdateSourceTrigger=PropertyChanged}" />
+                                                </StackPanel>
+                                                <Button Grid.Column="2"
+                                                        Classes="toolbar"
+                                                        Content="{x:Static resources:Strings.FetchUrl}"
+                                                        Command="{Binding FetchConfigurationFromUrlCommand}"
+                                                        VerticalAlignment="Bottom" />
+                                                <CheckBox Grid.Row="1"
+                                                          Grid.ColumnSpan="3"
+                                                          Content="{x:Static resources:Strings.FetchConfigurationOnStartup}"
+                                                          IsChecked="{Binding FetchConfigurationOnStartup}" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Row="2" Background="#FFFFFF" BorderBrush="#D5DDE8" BorderThickness="0,1,0,0" Padding="14,8">
+            <TextBlock Text="{Binding StatusMessage}" Classes="muted" />
+        </Border>
+    </Grid>
+
+</Window>

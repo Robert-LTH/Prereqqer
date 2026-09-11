@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="Add" xml:space="preserve"><value>Lägg till</value></data>
+  <data name="AddCondition" xml:space="preserve"><value>Lägg till kontroll</value></data>
+  <data name="AddPowerShell" xml:space="preserve"><value>Lägg till PowerShell</value></data>
+  <data name="AddWmi" xml:space="preserve"><value>Lägg till WMI</value></data>
+  <data name="Admin" xml:space="preserve"><value>Admin</value></data>
+  <data name="ApplicationName" xml:space="preserve"><value>Applikationsnamn</value></data>
+  <data name="AccentColor" xml:space="preserve"><value>Accentfärg</value></data>
+  <data name="Branding" xml:space="preserve"><value>Profilering</value></data>
+  <data name="Cancel" xml:space="preserve"><value>Avbryt</value></data>
+  <data name="Checks" xml:space="preserve"><value>Kontroller</value></data>
+  <data name="ConfigurationSource" xml:space="preserve"><value>Konfigurationskälla</value></data>
+  <data name="ConfigurationUrl" xml:space="preserve"><value>Konfigurations-URL</value></data>
+  <data name="ConditionDetails" xml:space="preserve"><value>Kontrolldetaljer</value></data>
+  <data name="Conditions" xml:space="preserve"><value>Kontroller</value></data>
+  <data name="CopyFactoryChecks" xml:space="preserve"><value>Kopiera inbyggda kontroller</value></data>
+  <data name="Delete" xml:space="preserve"><value>Ta bort</value></data>
+  <data name="Description" xml:space="preserve"><value>Beskrivning</value></data>
+  <data name="Down" xml:space="preserve"><value>Ned</value></data>
+  <data name="Duration" xml:space="preserve"><value>Tid</value></data>
+  <data name="Enabled" xml:space="preserve"><value>Aktiverad</value></data>
+  <data name="Errors" xml:space="preserve"><value>Fel</value></data>
+  <data name="ExpectedValue" xml:space="preserve"><value>Förväntat värde</value></data>
+  <data name="Export" xml:space="preserve"><value>Exportera</value></data>
+  <data name="FetchConfigurationOnStartup" xml:space="preserve"><value>Hämta konfiguration från den här URL:en vid start</value></data>
+  <data name="FetchUrl" xml:space="preserve"><value>Hämta URL</value></data>
+  <data name="Field" xml:space="preserve"><value>Fält</value></data>
+  <data name="GroupDetails" xml:space="preserve"><value>Gruppdetaljer</value></data>
+  <data name="Groups" xml:space="preserve"><value>Grupper</value></data>
+  <data name="HeaderBackground" xml:space="preserve"><value>Sidhuvudets bakgrund</value></data>
+  <data name="HeaderForeground" xml:space="preserve"><value>Sidhuvudets textfärg</value></data>
+  <data name="Import" xml:space="preserve"><value>Importera</value></data>
+  <data name="LastTestOutput" xml:space="preserve"><value>Senaste testutdata</value></data>
+  <data name="MatchedRule" xml:space="preserve"><value>Matchad regel</value></data>
+  <data name="Message" xml:space="preserve"><value>Meddelande</value></data>
+  <data name="Name" xml:space="preserve"><value>Namn</value></data>
+  <data name="Operator" xml:space="preserve"><value>Operator</value></data>
+  <data name="Outcome" xml:space="preserve"><value>Utfall</value></data>
+  <data name="OutcomeRules" xml:space="preserve"><value>Utfallsregler</value></data>
+  <data name="PlaceholderValue" xml:space="preserve"><value>Värde</value></data>
+  <data name="PowerShellScript" xml:space="preserve"><value>PowerShell-skript</value></data>
+  <data name="RecommendedAction" xml:space="preserve"><value>Rekommenderad åtgärd</value></data>
+  <data name="Reload" xml:space="preserve"><value>Läs om</value></data>
+  <data name="RequiresElevatedPrivileges" xml:space="preserve"><value>Kräver förhöjda behörigheter</value></data>
+  <data name="Run" xml:space="preserve"><value>Kör</value></data>
+  <data name="RunAll" xml:space="preserve"><value>Kör alla</value></data>
+  <data name="RunGroup" xml:space="preserve"><value>Kör grupp</value></data>
+  <data name="RuntimeTab" xml:space="preserve"><value>Körning</value></data>
+  <data name="RunInParallel" xml:space="preserve"><value>Kör parallellt med intilliggande parallella kontroller</value></data>
+  <data name="Save" xml:space="preserve"><value>Spara</value></data>
+  <data name="SaveResult" xml:space="preserve"><value>Spara resultat</value></data>
+  <data name="Settings" xml:space="preserve"><value>Inställningar</value></data>
+  <data name="Status" xml:space="preserve"><value>Status</value></data>
+  <data name="StructuredOutput" xml:space="preserve"><value>Strukturerad utdata</value></data>
+  <data name="Subtitle" xml:space="preserve"><value>Underrubrik</value></data>
+  <data name="Target" xml:space="preserve"><value>Mål</value></data>
+  <data name="Test" xml:space="preserve"><value>Testa</value></data>
+  <data name="TimeoutSeconds" xml:space="preserve"><value>Tidsgräns i sekunder</value></data>
+  <data name="Type" xml:space="preserve"><value>Typ</value></data>
+  <data name="UnsavedChanges" xml:space="preserve"><value>Osparade ändringar</value></data>
+  <data name="Up" xml:space="preserve"><value>Upp</value></data>
+  <data name="Validate" xml:space="preserve"><value>Validera</value></data>
+  <data name="Version" xml:space="preserve"><value>Version</value></data>
+  <data name="Warnings" xml:space="preserve"><value>Varningar</value></data>
+  <data name="WmiNamespace" xml:space="preserve"><value>WMI-namnområde</value></data>
+  <data name="WqlQuery" xml:space="preserve"><value>WQL-fråga</value></data>
+  <data name="AddedGroup" xml:space="preserve"><value>Lade till grupp.</value></data>
+  <data name="AddedCondition" xml:space="preserve"><value>Lade till kontroll.</value></data>
+  <data name="AddedPowerShellCondition" xml:space="preserve"><value>Lade till PowerShell-kontroll.</value></data>
+  <data name="AddedRule" xml:space="preserve"><value>Lade till regel.</value></data>
+  <data name="AddedWmiCondition" xml:space="preserve"><value>Lade till WMI-kontroll.</value></data>
+  <data name="AllExecutedConditionsPassed" xml:space="preserve"><value>Alla körda kontroller godkändes.</value></data>
+  <data name="CancelRunTooltip" xml:space="preserve"><value>Avbryt körningen</value></data>
+  <data name="CancelledConditionFormat" xml:space="preserve"><value>Avbröt {0}.</value></data>
+  <data name="CancelledMessage" xml:space="preserve"><value>Avbröts.</value></data>
+  <data name="CompletedAllGroupsFormat" xml:space="preserve"><value>Slutförde alla grupper på {0}.</value></data>
+  <data name="CompletedConditionFormat" xml:space="preserve"><value>Slutförde {0} med {1}.</value></data>
+  <data name="CompletedGroupFormat" xml:space="preserve"><value>Slutförde {0} på {1}.</value></data>
+  <data name="CompletedInFormat" xml:space="preserve"><value>Slutförd på {0}.</value></data>
+  <data name="ConditionAlreadyRunning" xml:space="preserve"><value>Kontrollen körs redan.</value></data>
+  <data name="ConditionNameFormat" xml:space="preserve"><value>Kontroll {0}</value></data>
+  <data name="ConditionHasValidationErrors" xml:space="preserve"><value>Kontrollen har valideringsfel.</value></data>
+  <data name="ConditionIsValid" xml:space="preserve"><value>Kontrollen är giltig.</value></data>
+  <data name="ConditionTestSkippedValidationFailed" xml:space="preserve"><value>Kontrolltestet hoppades över eftersom valideringen misslyckades.</value></data>
+  <data name="ConditionCancelledFormat" xml:space="preserve"><value>{0} kontroll(er) avbröts.</value></data>
+  <data name="ConditionReturnedErrorFormat" xml:space="preserve"><value>{0} kontroll(er) returnerade fel.</value></data>
+  <data name="ConditionReturnedWarningsFormat" xml:space="preserve"><value>{0} kontroll(er) returnerade varningar. Den övergripande beredskapen är fortfarande godkänd.</value></data>
+  <data name="CopiedFactoryChecksFormat" xml:space="preserve"><value>Kopierade {0} inbyggda kontroll(er) till {1} grupp(er). Spara definitionerna för att behålla ändringarna.</value></data>
+  <data name="DeletedCondition" xml:space="preserve"><value>Tog bort kontroll.</value></data>
+  <data name="DeletedGroup" xml:space="preserve"><value>Tog bort grupp.</value></data>
+  <data name="DeletedRule" xml:space="preserve"><value>Tog bort regel.</value></data>
+  <data name="DefinitionsHaveNotBeenRun" xml:space="preserve"><value>Definitionerna har inte körts.</value></data>
+  <data name="DesignModeEnabled" xml:space="preserve"><value>Designläge aktiverat.</value></data>
+  <data name="DesignWindowTitleFormat" xml:space="preserve"><value>{0} - Design</value></data>
+  <data name="ElevationRequiredMessage" xml:space="preserve"><value>Kräver förhöjda behörigheter; starta om med förhöjda behörigheter.</value></data>
+  <data name="ElevationRequiredRecommendedAction" xml:space="preserve"><value>Starta om applikationen med förhöjda behörigheter.</value></data>
+  <data name="EnterConfigurationUrlBeforeFetching" xml:space="preserve"><value>Ange en konfigurations-URL innan hämtning.</value></data>
+  <data name="ErrorsHeader" xml:space="preserve"><value>Fel:</value></data>
+  <data name="ExportDefinitionsTitle" xml:space="preserve"><value>Exportera Prereqqer-definitioner</value></data>
+  <data name="ExportedDefinitionsFormat" xml:space="preserve"><value>Exporterade definitioner till {0}.</value></data>
+  <data name="FetchedDefinitionsFormat" xml:space="preserve"><value>Hämtade definitioner från {0} och cachelagrade dem på {1}.</value></data>
+  <data name="GroupDisabledConditionNotRun" xml:space="preserve"><value>Gruppen är inaktiverad; kontrollen kördes inte.</value></data>
+  <data name="GroupDisabledNoConditionsRun" xml:space="preserve"><value>Gruppen är inaktiverad; inga kontroller kördes.</value></data>
+  <data name="GroupNameFormat" xml:space="preserve"><value>Grupp {0}</value></data>
+  <data name="ImportDefinitionsTitle" xml:space="preserve"><value>Importera Prereqqer-definitioner</value></data>
+  <data name="ImportedDefinitionsFormat" xml:space="preserve"><value>Importerade definitioner från {0}.</value></data>
+  <data name="JsonFiles" xml:space="preserve"><value>JSON-filer</value></data>
+  <data name="LoadedDefinitionsFormat" xml:space="preserve"><value>Läste in definitioner från {0}.</value></data>
+  <data name="LoadedDefinitionsFromUrlFormat" xml:space="preserve"><value>Läste in definitioner från {0} och cachelagrade dem på {1}.</value></data>
+  <data name="LoadedLocalDefinitionsConfigurationUrlFailedFormat" xml:space="preserve"><value>Läste in lokala definitioner från {0}; konfigurations-URL misslyckades: {1}</value></data>
+  <data name="LoadingDefinitions" xml:space="preserve"><value>Läser in definitioner...</value></data>
+  <data name="NoChecksFailed" xml:space="preserve"><value>Inga kontroller har misslyckats.</value></data>
+  <data name="NoFactoryChecksCopied" xml:space="preserve"><value>Alla inbyggda kontroller finns redan.</value></data>
+  <data name="NotRun" xml:space="preserve"><value>Inte körd</value></data>
+  <data name="NotRunMessage" xml:space="preserve"><value>Inte körd.</value></data>
+  <data name="NotFoundViewFormat" xml:space="preserve"><value>Hittade inte vyn: {0}</value></data>
+  <data name="OutcomeCancelled" xml:space="preserve"><value>Avbruten</value></data>
+  <data name="OutcomeError" xml:space="preserve"><value>Fel</value></data>
+  <data name="OutcomePassed" xml:space="preserve"><value>Godkänd</value></data>
+  <data name="OutcomePassedWithWarning" xml:space="preserve"><value>Godkänd med varning</value></data>
+  <data name="OutcomeWarning" xml:space="preserve"><value>Varning</value></data>
+  <data name="PowerShellConditionNameFormat" xml:space="preserve"><value>PowerShell-kontroll {0}</value></data>
+  <data name="RunCancelled" xml:space="preserve"><value>Körningen avbröts.</value></data>
+  <data name="RunOneOrMoreConditionsBeforeSavingResults" xml:space="preserve"><value>Kör en eller flera kontroller innan du sparar resultat.</value></data>
+  <data name="Running" xml:space="preserve"><value>Kör...</value></data>
+  <data name="RunningAllGroups" xml:space="preserve"><value>Kör alla grupper...</value></data>
+  <data name="RunningItemFormat" xml:space="preserve"><value>Kör {0}...</value></data>
+  <data name="RuleNameFormat" xml:space="preserve"><value>Regel {0}</value></data>
+  <data name="SavedDefinitionsFormat" xml:space="preserve"><value>Sparade definitioner till {0}.</value></data>
+  <data name="SavedResultsFormat" xml:space="preserve"><value>Sparade resultat till {0}.</value></data>
+  <data name="SaveResultsTitle" xml:space="preserve"><value>Spara Prereqqer-resultat</value></data>
+  <data name="TestCompletedFormat" xml:space="preserve"><value>Testet slutfördes med {0}.</value></data>
+  <data name="UpdatedFromIndividualConditionRun" xml:space="preserve"><value>Uppdaterad från individuell kontrollkörning.</value></data>
+  <data name="ValidationPassed" xml:space="preserve"><value>Valideringen godkändes.</value></data>
+  <data name="WarningsHeader" xml:space="preserve"><value>Varningar:</value></data>
+  <data name="WaitForRunningGroupBeforeAnotherCheck" xml:space="preserve"><value>Vänta tills den körande gruppen är klar innan du startar en annan kontroll i den.</value></data>
+  <data name="WaitForRunningGroupBeforeAnotherGroup" xml:space="preserve"><value>Vänta tills den körande gruppen är klar innan du startar kontroller i en annan grupp.</value></data>
+  <data name="WmiConditionNameFormat" xml:space="preserve"><value>WMI-kontroll {0}</value></data>
+</root>

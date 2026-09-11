@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Prereqqer.Core/Prereqqer.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Prereqqer.Core.Tests/Prereqqer.Core.Tests.csproj" />
+  </Folder>
+</Solution>
